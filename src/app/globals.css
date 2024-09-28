@@ -2,26 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "LeagueSpartan";
+  font-weight: 700;
+  src: url(./../../public/fonts/LeagueSpartan-Bold.ttf);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.theme_one {
+  --bg-main: hsl(222, 26%, 31%);
+  --bg-keypad: hsl(223, 31%, 20%);
+  --bg-screen: hsl(224, 36%, 15%);
+  --key-back: hsl(225, 21%, 49%);
+  --key-shadow: hsl(224, 28%, 35%);
+  --key-equal-btn: hsl(6, 63%, 50%);
+  --key-equal-btn-shadow : hsl(6, 70%, 34%);
+  --key-active-back : hsl(30, 25%, 89%);
+  --key-active-shadow: hsl(28, 16%, 65%);
+  --text : hsl(221, 14%, 31%);
+}
+.theme_two {
+  --bg-main: hsl(0, 0%, 90%);
+  --bg-keypad: hsl(0, 5%, 81%);
+  --bg-screen: hsl(0, 0%, 93%);
+  --key-back: hsl(185, 42%, 37%);
+  --key-shadow: hsl(185, 58%, 25%);
+  --key-equal-btn: hsl(25, 98%, 40%);
+  --key-equal-btn-shadow : hsl(25, 99%, 27%);
+  --key-active-back : hsl(45, 7%, 89%);
+  --key-active-shadow: hsl(35, 11%, 61%);
+  --text : hsl(60, 10%, 19%);
+}
+.theme_three {
+  --bg-main: hsl(268, 75%, 9%);
+  --bg-keypad: hsl(268, 71%, 12%);
+  --bg-screen: hsl(268, 71%, 12%);
+  --key-back: hsl(281, 89%, 26%);
+  --key-shadow: hsl(285, 91%, 52%);
+  --key-equal-btn: hsl(176, 100%, 44%);
+  --key-equal-btn-shadow : hsl(177, 92%, 70%);
+  --key-active-back : hsl(268, 47%, 21%);
+  --key-active-shadow: hsl(290, 70%, 36%);
+  --text : hsl(52, 100%, 62%);
+  --text-equal : hsl(198, 20%, 13%)
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
