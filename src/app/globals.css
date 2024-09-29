@@ -19,6 +19,16 @@
   --key-active-back : hsl(30, 25%, 89%);
   --key-active-shadow: hsl(28, 16%, 65%);
   --text : hsl(221, 14%, 31%);
+  --text-two : hsl(0, 0%, 100%);
+  .switch-toggle {
+    float: left;
+    background: var(--bg-screen);
+    border-radius: 9999px;
+    padding: 3px;
+  };
+  .switch-toggle input:checked + label {
+    background: var(--key-equal-btn);
+  }
 }
 .theme_two {
   --bg-main: hsl(0, 0%, 90%);
@@ -31,6 +41,16 @@
   --key-active-back : hsl(45, 7%, 89%);
   --key-active-shadow: hsl(35, 11%, 61%);
   --text : hsl(60, 10%, 19%);
+  --text-two : hsl(0, 0%, 100%);
+  .switch-toggle {
+    float: left;
+    background: var(--bg-screen);
+    border-radius: 9999px;
+    padding: 3px;
+  };
+  .switch-toggle input:checked + label {
+    background: var(--key-equal-btn);
+  }
 }
 .theme_three {
   --bg-main: hsl(268, 75%, 9%);
@@ -43,7 +63,26 @@
   --key-active-back : hsl(268, 47%, 21%);
   --key-active-shadow: hsl(290, 70%, 36%);
   --text : hsl(52, 100%, 62%);
-  --text-equal : hsl(198, 20%, 13%)
+  --text-two : hsl(0, 0%, 100%);
+  --text-equal : hsl(198, 20%, 13%);
+  .switch-toggle {
+    float: left;
+    background: var(--bg-screen);
+    border-radius: 9999px;
+    padding: 3px;
+  };
+  .switch-toggle input:checked + label {
+    background: var(--key-equal-btn);
+  }
 }
 
-
+.switch-toggle input {
+ position: absolute;
+ opacity: 0;
+}
+.switch-toggle input + label {
+ padding: 8px;
+ border-radius: 9999px;
+ float:left;
+ cursor: pointer;
+}

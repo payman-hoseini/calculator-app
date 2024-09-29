@@ -19,6 +19,7 @@ const config: Config = {
           "key-active-back" : "var(--key-active-back)",
           "key-active-shadow" : "var(--key-active-shadow)",
           "text" : "var(--text)",
+          "text-two" : "var(--text-two)",
           "text-equal" : "var(--text-equal)",
       },
       fontFamily : {
