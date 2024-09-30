@@ -2,7 +2,7 @@
 interface ButtonProps {
     className : string,
     value : string,
-    onClick : () => void
+    onClick : (e: any) => void
 }
 
 export default function Button({className , value , onClick} : ButtonProps) {
