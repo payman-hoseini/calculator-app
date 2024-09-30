@@ -2,7 +2,7 @@
 interface ButtonProps {
     className : string,
     value : string,
-    onClick : (e: any) => void
+    onClick : (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
 export default function Button({className , value , onClick} : ButtonProps) {
