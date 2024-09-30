@@ -1,6 +1,15 @@
 'use client'
 
 import { useState } from "react";
+import Button from "./components/button";
+
+const btnValues = [
+    "7","8","9","DEL",
+    "4","5","6","+",
+    "1","2","3","-",
+    ".","0","/","x",
+    "RESET" , "="
+]
 
 export default function Home() {
   const [theme, setTheme] = useState("theme_one")
@@ -23,76 +32,33 @@ export default function Home() {
                       <span>3</span>
                     </div>
                     <div className="switch-toggle space-x-1 switch-3 switch-candy">
-                      <input id="one" name="theme" type="radio" onClick={setThemeHandler}/>
+                      <input id="one" name="theme" type="radio" onClick={setThemeHandler} checked={(theme == "theme_one" ? true : false)}/>
                       <label htmlFor="on"></label>
 
-                      <input id="two" name="theme" type="radio" onClick={setThemeHandler}/>
+                      <input id="two" name="theme" type="radio" onClick={setThemeHandler} checked={(theme == "theme_two" ? true : false)}/>
                       <label htmlFor="na" ></label>
 
-                      <input id="three" name="theme" type="radio" onClick={setThemeHandler}/>
+                      <input id="three" name="theme" type="radio" onClick={setThemeHandler} checked={(theme == "theme_three" ? true : false)}/>
                       <label htmlFor="off"></label>
                     </div>
                   </div>
                 </div>
             </div>
-            <div className="bg-screen_background mt-6 rounded-lg flex items-center py-12 relative">
-              <p className={`${theme == "theme_one" ? "text-text-two" : "text-text"} font-LeagueSpartan text-5xl right-7 absolute`}>399,981</p>
+            <div className="bg-screen_background mt-6 rounded-lg flex items-center py-8 px-7 justify-end">
+              <p className={`${theme == "theme_one" ? "text-text-two" : "text-text"} font-LeagueSpartan text-5xl right-7`}>399,981</p>
             </div>
             <div className="grid grid-cols-4 gap-5 bg-keypad_background p-7 mt-5 rounded-lg">
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">7</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">8</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">9</p>
-              </div>
-              <div className="bg-key_background rounded-lg border-b-4 border-b-key_shadow flex justify-center items-center  hover:brightness-125 hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-2xl text-text-two">DEL</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">4</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">5</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">6</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">+</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">1</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">2</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">3</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">-</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">.</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">0</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">/</p>
-              </div>
-              <div className="bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text">x</p>
-              </div>
-              <div className="bg-key_background rounded-lg border-b-4 border-b-key_shadow flex justify-center items-center col-span-2  hover:brightness-125 hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-2xl text-text-two">RESET</p>
-              </div>
-              <div className="bg-key-equal-btn rounded-lg border-b-4 border-b-key-equal-btn-shadow flex justify-center col-span-2  hover:brightness-125 hover:cursor-pointer">
-                <p className="font-LeagueSpartan text-[32px] text-text-two">=</p>
-              </div>
+              {
+                btnValues.map((btn , i) => {
+                  return (
+                    <Button key={i} className={(btn == "DEL") ? "font-LeagueSpartan text-2xl text-text-two bg-key_background rounded-lg border-b-4 border-b-key_shadow flex justify-center items-center  hover:brightness-125 hover:cursor-pointer" : 
+                      (btn == "RESET") ? "font-LeagueSpartan text-2xl text-text-two bg-key_background rounded-lg border-b-4 border-b-key_shadow flex justify-center items-center col-span-2  hover:brightness-125 hover:cursor-pointer" :
+                      (btn == "=") ? "font-LeagueSpartan text-[32px] text-text-two bg-key-equal-btn rounded-lg border-b-4 border-b-key-equal-btn-shadow flex justify-center col-span-2  hover:brightness-125 hover:cursor-pointer" :
+                      "font-LeagueSpartan text-[32px] text-text bg-key-active-back rounded-lg border-b-4 border-b-key-active-shadow flex justify-center  hover:brightness-[1.15] hover:cursor-pointer"} value={btn} 
+                      onClick={()=> {}}/>
+                  )
+                })
+              }
             </div>
         </div>
       </main>
