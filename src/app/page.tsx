@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import {  useState } from "react";
 import Button from "./components/button";
 
 const btnValues = [
@@ -13,16 +13,16 @@ const btnValues = [
 
 export default function Home() {
   const [theme, setTheme] = useState("theme_one");
-  function setThemeHandler(e : any){
+  function setThemeHandler(e : React.MouseEvent<HTMLInputElement, MouseEvent>){
     setTheme(`theme_${e.target.id}`)
   }
 
-  let [calc, setCalc] = useState({
+  const [calc, setCalc] = useState({
     sign: "",
     num: 0,
     res: 0,
   });
-  const numClickHandler = (e : any) => {
+  const numClickHandler = (e : React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     const value = e.target.innerHTML;
     if (calc.num.toString.length < 16) {
@@ -40,7 +40,7 @@ export default function Home() {
       });
     }
   };
-  const commaClickHandler = (e : any) => {
+  const commaClickHandler = (e : React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     const value = e.target.innerHTML;
     setCalc({
@@ -49,7 +49,7 @@ export default function Home() {
     });
 
   };
-  const signClickHandler = (e : any) => {
+  const signClickHandler = (e : React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     const value = e.target.innerHTML;
     setCalc({
