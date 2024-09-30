@@ -31,6 +31,8 @@ export default function Home() {
         num:
           calc.num === 0 && value === "0"
             ? "0"
+            : calc.num.toString().includes(".")
+            ? calc.num + value
             : calc.num % 1 === 0
             ? Number(calc.num + value)
             : calc.num + value,
