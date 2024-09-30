@@ -92,8 +92,9 @@ export default function Home() {
   const deleteHandler = () => {
     setCalc({
       ...calc,
-      res : parseInt((calc.res / (calc.res.toString.length * 10)).toString()),
-      num : parseInt((calc.num / (calc.num.toString.length * 10)).toString())
+      // calc.res.toString().includes(".") ? parseInt(((calc.res * 10) / 10).toString()) :
+      res :  parseInt((calc.res / (10)).toString()),
+      num :  parseInt((calc.num / (10)).toString())
     })
   }
   return (

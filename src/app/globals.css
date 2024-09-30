@@ -24,7 +24,9 @@
     float: left;
     background: var(--bg-screen);
     border-radius: 9999px;
-    padding: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 3px;
   };
   .switch-toggle input:checked + label {
     background: var(--key-equal-btn);
@@ -46,7 +48,9 @@
     float: left;
     background: var(--bg-screen);
     border-radius: 9999px;
-    padding: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 4px;
   };
   .switch-toggle input:checked + label {
     background: var(--key-equal-btn);
@@ -69,7 +73,9 @@
     float: left;
     background: var(--bg-screen);
     border-radius: 9999px;
-    padding: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 4px;
   };
   .switch-toggle input:checked + label {
     background: var(--key-equal-btn);
