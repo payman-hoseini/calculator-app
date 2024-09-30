@@ -14,7 +14,8 @@ const btnValues = [
 export default function Home() {
   const [theme, setTheme] = useState("theme_one");
   function setThemeHandler(e : React.MouseEvent<HTMLInputElement, MouseEvent>){
-    setTheme(`theme_${e.target.id}`)
+    const target = e.target as HTMLInputElement
+    setTheme(`theme_${target.id}`)
   }
 
   const [calc, setCalc] = useState({
@@ -24,34 +25,37 @@ export default function Home() {
   });
   const numClickHandler = (e : React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    const value = e.target.innerHTML;
-    if (calc.num.toString.length < 16) {
+    const target = e.target as HTMLButtonElement
+    const value =target.innerHTML;
+    if (calc.num.toString().length < 16) {
       setCalc({
         ...calc,
         num:
           calc.num === 0 && value === "0"
-            ? "0"
+            ? 0
             : calc.num.toString().includes(".")
-            ? calc.num + value
+            ? Number(calc.num + value)
             : calc.num % 1 === 0
             ? Number(calc.num + value)
-            : calc.num + value,
+            : Number(calc.num + value),
         res: !calc.sign ? 0 : calc.res,
       });
     }
   };
   const commaClickHandler = (e : React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    const value = e.target.innerHTML;
+    const target = e.target as HTMLButtonElement
+    const value = target.innerHTML;
     setCalc({
       ...calc,
-      num: !calc.num.toString().includes(".") ? calc.num + value : calc.num,
+      num: !calc.num.toString().includes(".") ? Number(calc.num + value) : calc.num,
     });
 
   };
   const signClickHandler = (e : React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    const value = e.target.innerHTML;
+    const target = e.target as HTMLButtonElement
+    const value = target.innerHTML;
     setCalc({
       ...calc,
       sign: value,
