@@ -33,8 +33,8 @@ export default function Home() {
           calc.num === 0 && value === "0"
             ? 0
             : calc.num.toString().includes(".")
-            ? calc.num + value
-            // ? Number(calc.num + value)
+            // ? calc.num + value
+            ? Number(calc.num + value)
             : calc.num % 1 === 0
             ? Number(calc.num + value)
             : Number(calc.num + value),
@@ -48,8 +48,8 @@ export default function Home() {
     const value = target.innerHTML;
     setCalc({
       ...calc,
-      // num: !calc.num.toString().includes(".") ? Number(calc.num + value) : calc.num,
-      num: !calc.num.toString().includes(".") ? calc.num + value : calc.num,
+      num: !calc.num.toString().includes(".") ? Number(calc.num + value) : calc.num,
+      // num: !calc.num.toString().includes(".") ? calc.num + value : calc.num,
     });
   };
   const signClickHandler = (e : React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
